@@ -1,5 +1,6 @@
 
-// clipboard API
+
+// Clipboard API
 // const clip = () => {
 //     window.navigator.clipboard
 //         .readText()
@@ -14,7 +15,7 @@
 // clip()
 
 
-// battery API
+// Battery API
 // navigator.getBattery().then((battery) => {
 //     function updateAllBatteryInfo() {
 //       updateChargeInfo();
@@ -52,6 +53,49 @@
 //       console.log(`Battery discharging time: ${battery.dischargingTime} seconds`);
 //     }
 //   });
+
+
+// Screen Wake Lock API
+let wakeLock = null;
+
+async function lockHandler() {
+  wakeLock = await navigator.wakeLock.request("screen");
+}
+
+async function releaseHandler() {
+  await wakeLock.release();
+  wakeLock = null;
+}
+
+
+// SendBeacon
+// используется для асинхронной передачи небольшого количества информации поверх HTTP веб-серверу.
+// window.addEventListener("unload", logData, false);
+
+// function logData() {
+//   navigator.sendBeacon("/log", {});
+// }
+
+// logData()
+
+// данные о клиенте
+
+
+// function getCoords(pos) {
+//   const crd = pos.coords;
+
+//   console.log("Your current position is:");
+//   console.log(`Latitude : ${crd.latitude}`);
+//   console.log(`Longitude: ${crd.longitude}`);
+//   console.log(`More or less ${crd.accuracy} meters.`);
+// }
+
+// const geolocationInfo = navigator.geolocation.getCurrentPosition(getCoords);
+
+// console.log(navigator)
+
+print('123')
+
 
 
 
