@@ -31,6 +31,7 @@ var invert = function() {
 	ctx.drawImage(img, 0, 0);
 	const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 	const data = imageData.data;
+	console.log('🚀 ~ data:', imageData)
 	for (var i = 0; i < data.length; i += 4) {
 		data[i]     = 255 - data[i];     // red
 		data[i + 1] = 255 - data[i + 1]; // green

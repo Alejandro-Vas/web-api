@@ -28,25 +28,29 @@
 </head>
 
 <body>
-  <div>
+  <div id="root">
 
   </div>
 
   <script>
-    const divElem = document.querySelector('div');
+    const div = document.getElementById('root');
 
-    let rotate360 = [
+    const rotate360 = [
       { transform: 'rotate(360deg)' }
     ];
 
-    let slowInfinite = {
-      duration: 5000,
+    const slowInfinite = {
+      duration: 100000,
       iterations: Infinity
     }
 
-    divElem.animate( rotate360, slowInfinite );
+    div.animate( rotate360, slowInfinite );
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/animate
 
   </script>
 </body>
 
 </html>
+
+

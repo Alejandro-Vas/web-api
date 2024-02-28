@@ -1,14 +1,14 @@
 var img = new Image();
 img.crossOrigin = 'anonymous';
 img.src = './assets/rhino.jpg';
-img.onload = function() {
-  draw(this);
+img.onload = function () {
+	draw(this);
 };
 
 function draw(img) {
-  var canvas = document.getElementById('canvas');
-  var ctx = canvas.getContext('2d');
-  ctx.drawImage(img, 0, 0);
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.drawImage(img, 0, 0);
 
 	var smoothedZoomCtx = document.getElementById('smoothed-zoom').getContext('2d');
 	smoothedZoomCtx.imageSmoothingEnabled = true;
@@ -22,19 +22,19 @@ function draw(img) {
 	pixelatedZoomCtx.webkitImageSmoothingEnabled = false;
 	pixelatedZoomCtx.msImageSmoothingEnabled = false;
 
-  var zoom = function(ctx, x, y) {
-    ctx.drawImage(canvas,
-									Math.min(Math.max(0, x - 5), img.width - 10),
-									Math.min(Math.max(0, y - 5), img.height - 10),
-									10, 10,
-									0, 0,
-									200, 200);
-  };
+	var zoom = function (ctx, x, y) {
+		ctx.drawImage(canvas,
+			Math.min(Math.max(0, x - 5), img.width - 10),
+			Math.min(Math.max(0, y - 5), img.height - 10),
+			10, 10,
+			0, 0,
+			200, 200);
+	};
 
-  canvas.addEventListener('mousemove', function(event) {
+	canvas.addEventListener('mousemove', function (event) {
 		const x = event.layerX;
 		const y = event.layerY;
-    zoom(smoothedZoomCtx, x, y);
-    zoom(pixelatedZoomCtx, x, y);
+		zoom(smoothedZoomCtx, x, y);
+		zoom(pixelatedZoomCtx, x, y);
 	});
 }

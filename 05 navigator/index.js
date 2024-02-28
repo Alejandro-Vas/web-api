@@ -1,5 +1,4 @@
 
-
 // Clipboard API
 // const clip = () => {
 //     window.navigator.clipboard
@@ -56,16 +55,16 @@
 
 
 // Screen Wake Lock API
-let wakeLock = null;
+// let wakeLock = null;
 
-async function lockHandler() {
-  wakeLock = await navigator.wakeLock.request("screen");
-}
+// async function lockHandler() {
+//   wakeLock = await navigator.wakeLock.request("screen");
+// }
 
-async function releaseHandler() {
-  await wakeLock.release();
-  wakeLock = null;
-}
+// async function releaseHandler() {
+//   await wakeLock.release();
+//   wakeLock = null;
+// }
 
 
 // SendBeacon
@@ -94,10 +93,4 @@ async function releaseHandler() {
 
 // console.log(navigator)
 
-print('123')
-
-
-
-
-
-
+// print('1231231312')
