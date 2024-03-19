@@ -72,14 +72,12 @@
 // window.addEventListener("unload", logData, false);
 
 // function logData() {
-//   navigator.sendBeacon("/log", {});
+//   navigator.sendBeacon("/log", 'some payload');
 // }
 
 // logData()
 
 // данные о клиенте
-
-
 // function getCoords(pos) {
 //   const crd = pos.coords;
 
@@ -93,4 +91,5 @@
 
 // console.log(navigator)
 
+// печать
 // print('1231231312')
